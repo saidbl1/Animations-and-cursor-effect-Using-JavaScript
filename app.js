@@ -94,3 +94,16 @@ image_wrap.addEventListener("mouseout", () => {
 setTimeout(() => {
   image_wrap.style.pointerEvents = "auto";
 }, timeline.endTime() * 1000);
+
+// hide  cursor_circle and cursor_point when mouse enter and leave the page
+const cursor_point = document.querySelector(".cursor-point");
+document.addEventListener("mouseenter", () => {
+  cursor_circle.style.display = "block";
+  cursor_point.style.display = "block";
+});
+document.addEventListener("mouseleave", () => {
+  cursor_circle.style.display = "none";
+  cursor_point.style.display = "none";
+});
+
+// make the navbar screen responsive
