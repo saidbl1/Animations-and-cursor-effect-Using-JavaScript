@@ -5,9 +5,11 @@
   margin: 0;
   box-sizing: border-box;
   cursor: none;
-  --bg: #1d2927;
-  --color-1: #f3c892;
-  --nav: #e7e2db;
+  --bg: hsl(210, 100%, 12%);
+  --color-1: hsl(197, 100%, 75%);
+  --color-hover: hsl(146, 100%, 50%);
+  --main-text: hsl(197, 100%, 75%);
+  --nav: hsl(197, 100%, 75%);
   --nav-hover: #f3c892;
   /* --bg: #1d2927;
   --color-1: #f3c892;
@@ -48,6 +50,8 @@ main {
 .signature {
   width: 110px;
   grid-column-start: 2;
+  background-color: rgba(128, 219, 255, 0.25);
+  background-blend-mode: exclusion;
 }
 
 .hide {
@@ -83,7 +87,7 @@ nav ul {
 }
 
 .nav-link a:hover {
-  color: var(--nav-hover);
+  color: var(--color-hover);
 }
 
 .image-wrap {
@@ -101,10 +105,22 @@ nav ul {
   pointer-events: none;
 }
 
+.image-wrap::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(128, 219, 255, 0.25);
+}
+
 .big-name {
   position: relative;
   z-index: 1;
-  color: #f3f0eb;
+  color: var(--main-text);
   font-size: clamp(3rem, 10vw, 8rem);
   font-weight: 500;
   text-align: center;
@@ -112,19 +128,19 @@ nav ul {
   width: fit-content;
   pointer-events: none;
 
-  text-shadow: -6px -6px #1d2927, -5px -5px #1d2927, -4px -4px #1d2927,
-    -3px -3px #1d2927, -2px -2px #1d2927, -1px -1px #1d2927, 1px 1px #1d2927,
-    2px 2px #1d2927, 3px 3px #1d2927, 4px 4px #1d2927, 5px 5px #1d2927,
-    6px 6px #1d2927, 7px 7px #1d2927;
+  text-shadow: -6px -6px var(--bg), -5px -5px var(--bg), -4px -4px var(--bg),
+    -3px -3px var(--bg), -2px -2px var(--bg), -1px -1px var(--bg),
+    1px 1px var(--bg), 2px 2px var(--bg), 3px 3px var(--bg), 4px 4px var(--bg),
+    5px 5px var(--bg), 6px 6px var(--bg), 7px 7px var(--bg);
   width: 100%;
 
   /* -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-shadow: 0px -6px 0 #1d2927, 0px -6px 0 #1d2927, 0px 6px 0 #1d2927,
-    0px 6px 0 #1d2927, -6px 0px 0 #1d2927, 6px 0px 0 #1d2927, -6px 0px 0 #1d2927,
-    6px 0px 0 #1d2927, -6px -6px 0 #1d2927, 6px -6px 0 #1d2927,
-    -6px 6px 0 #1d2927, 6px 6px 0 #1d2927, -6px 18px 0 #1d2927,
-    0px 18px 0 #1d2927, 6px 18px 0 #1d2927; */
+  text-shadow: 0px -6px 0 var(--bg), 0px -6px 0 var(--bg), 0px 6px 0 var(--bg),
+    0px 6px 0 var(--bg), -6px 0px 0 var(--bg), 6px 0px 0 var(--bg), -6px 0px 0 var(--bg),
+    6px 0px 0 var(--bg), -6px -6px 0 var(--bg), 6px -6px 0 var(--bg),
+    -6px 6px 0 var(--bg), 6px 6px 0 var(--bg), -6px 18px 0 var(--bg),
+    0px 18px 0 var(--bg), 6px 18px 0 var(--bg); */
 }
 
 .big-name span {
@@ -139,7 +155,7 @@ nav ul {
 }
 
 .bottom-section p {
-  color: #777;
+  color: var(--main-text);
   font-weight: 300;
   display: flex;
   align-items: center;
@@ -158,12 +174,12 @@ nav ul {
 .social-media a {
   margin-left: 0.8rem;
   font-size: 1.2rem;
-  color: #777;
+  color: var(--color-1);
   transition: 0.3s;
 }
 
 .social-media a:hover {
-  color: var(--color-1);
+  color: var(--color-hover);
 }
 
 .scroll {
@@ -183,11 +199,7 @@ nav ul {
   left: 50%;
   transform: translateX(-50%);
   bottom: 0;
-  background-image: linear-gradient(
-    to top,
-    rgb(157, 167, 165),
-    rgb(121, 124, 124)
-  );
+  background-image: linear-gradient(to top, var(--main-text), var(--bg));
 }
 
 .cursor-circle {
