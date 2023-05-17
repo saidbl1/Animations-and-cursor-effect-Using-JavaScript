@@ -47,11 +47,9 @@ main {
   align-items: center;
 }
 
-.signature {
+.logo {
   width: 110px;
   grid-column-start: 2;
-  background-color: rgba(128, 219, 255, 0.25);
-  background-blend-mode: exclusion;
 }
 
 .hide {
@@ -237,5 +235,5 @@ nav ul {
 .cursor-circle.biggerCursor {
   width: 70px;
   height: 70px;
-  background-color: rgba(105, 105, 105, 0.4);
+  background-color: rgba(105, 105, 105, 0.2);
 }

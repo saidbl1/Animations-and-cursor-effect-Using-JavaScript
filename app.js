@@ -54,6 +54,7 @@ window.addEventListener("mousemove", (e) => {
   });
 });
 
+// mouse gets bigger on hover
 elements.forEach((el) => {
   el.addEventListener("mouseover", () => {
     cursor_circle.classList.add("biggerCursor");
@@ -106,4 +107,13 @@ document.addEventListener("mouseleave", () => {
   cursor_point.style.display = "none";
 });
 
-// make the navbar screen responsive
+// logo change on hover
+
+const logo = document.querySelector(".logo");
+
+logo.addEventListener("mouseover", (event) => {
+  event.target.src = "./img/lightGreen.png";
+});
+logo.addEventListener("mouseout", (event) => {
+  event.target.src = "./img/lightBlue.png";
+});
